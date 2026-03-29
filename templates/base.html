@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com">
+
     <style>
         /* Styles additionnels pour un rendu publicitaire percutant */
         body {
@@ -76,6 +78,16 @@
         .nav-link.active {
             color: #ff7e36 !important;
         }
+        .fa-whatsapp { color: #25D366; }
+        .fa-facebook-messenger { color: #0084FF; }
+        .fa-envelope { color: #D44638; }
+        .fa-linkedin { color: #0077B5; }
+        .fa-youtube { color: #FF0000; }
+        i {
+            font-family: "Font Awesome 6 Brands", "Font Awesome 6 Free", sans-serif !important;
+            font-style: normal;
+        }
+
     </style>
 </head>
 <body>
@@ -152,10 +164,36 @@
                 <div class="col-md-4 mb-4 text-center text-md-end">
                     <h5 class="text-white">Contactez-nous</h5>
                     <div class="social-icons mb-3">
-                        <a href="https://wa.me/22677090365" target="_blank" title="WhatsApp"><i class="bi bi-whatsapp"></i></a>
-                        <a href="https://m.me/ESolution" target="_blank" title="Facebook Messenger"><i class="bi bi-messenger"></i></a>
-                        <a href="mailto:kaboreamsa@gmail.com" title="Gmail"><i class="bi bi-envelope-fill"></i></a>
-                        <a href="tel:+22677090365" title="Téléphone"><i class="bi bi-telephone-fill"></i></a>
+                        <!-- WhatsApp -->
+                        <a href="https://wa.me/22677090365" target="_blank" title="WhatsApp">
+                            <i class=" fa-brands fa-whatsapp"></i>
+                        </a>
+
+                        <!-- Facebook Messenger -->
+                        <a href="https://www.facebook.com/share/1Srop7mRQi/" target="_blank" title="Facebook Messenger">
+                            <i class="fa-facebook-messenger"></i>
+                        </a>
+
+                        <!-- Gmail (Email) -->
+                        <a href="mailto:kaboreamsa@gmail.com" title="Gmail">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+
+                        <!-- Téléphone -->
+                        <a href="tel:+22677090365" title="Téléphone">
+                            <i class="fa-solid fa-phone"></i>
+                        </a>
+
+                        <!-- LinkedIn (Ajouté) -->
+                        <a href="https://www.linkedin.com/in/amsa-kabore-085ba11a6?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" title="LinkedIn">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+
+                        <!-- YouTube (Ajouté) -->
+                        <a href="https://www.youtube.com/@user-z3k2n?si=tSkAJcA01x9dhvb4" target="_blank" title="YouTube">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+
                     </div>
                     <p class="small">Réponse sous 24h – Du lundi au vendredi.</p>
                     <p class="small">&copy; {% now "Y" %} ESOLUTION – Tous droits réservés.</p>

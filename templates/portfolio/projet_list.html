@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}Portfolio - Mes projets{% endblock %}
+{% block content %}
+<h1>Mes projets</h1>
+<div class="row">
+    {% for projet in projets %}
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="{{ projet.image.url }}" class="card-img-top" alt="{{ projet.titre }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ projet.titre }}</h5>
+                    <p class="card-text">{{ projet.description|truncatewords:20 }}</p>
+                    <p class="text-muted">Créé le {{ projet.date_creation|date:"d/m/Y" }}</p>
+                    <a href="{% url 'portfolio:detail' projet.pk %}" class="btn btn-primary">Voir détails</a>
+                    {% if projet.url %}
+                        <a href="{{ projet.url }}" target="_blank" class="btn btn-secondary">Visiter le site</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    {% empty %}
+        <p>Aucun projet pour le moment.</p>
+    {% endfor %}
+</div>
+{% endblock %}

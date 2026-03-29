@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}{{ projet.titre }} - Portfolio{% endblock %}
+{% block content %}
+<h1>{{ projet.titre }}</h1>
+<p class="text-muted">Créé le {{ projet.date_creation|date:"d/m/Y" }}</p>
+<img src="{{ projet.image.url }}" class="img-fluid mb-3" alt="{{ projet.titre }}">
+<div class="mt-4">
+    {{ projet.description|linebreaks }}
+</div>
+{% if projet.url %}
+    <a href="{{ projet.url }}" target="_blank" class="btn btn-primary">Visiter le site</a>
+{% endif %}
+<a href="{% url 'portfolio:list' %}" class="btn btn-secondary">Retour au portfolio</a>
+{% endblock %}

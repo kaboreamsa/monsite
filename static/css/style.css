@@ -39,3 +39,12 @@ body {
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
 }
+
+.logo {
+    max-height: 80px;
+    margin: 10px;
+}
+.pdg-photo {
+    border-radius: 50%;
+    border: 3px solid #333;
+}

@@ -84,8 +84,8 @@ WSGI_APPLICATION = 'monsite.wsgi.application'
 #        'NAME': BASE_DIR / 'db.sqlite3',
 #    }
 #}
-DATABASE ={
-    'default':{dj_database_url.config(default=config('DATABASE_URL'))}
+DATABASES ={
+    'default':dj_database_url.config(default=config('DATABASES_URL'))
 }
     
 

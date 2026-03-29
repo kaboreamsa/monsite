@@ -1,0 +1,80 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard - {% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <style>
+        body {
+            background-color: #f4f6f9;
+        }
+        .sidebar {
+            min-height: 100vh;
+            background-color: #0a2b3e;
+        }
+        .sidebar a {
+            color: #ccc;
+            text-decoration: none;
+            display: block;
+            padding: 10px 15px;
+        }
+        .sidebar a:hover, .sidebar a.active {
+            background-color: #ff7e36;
+            color: white;
+        }
+        .content {
+            padding: 20px;
+        }
+        .navbar-dash {
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-md-3 col-lg-2 px-0 sidebar">
+                <div class="text-center py-4">
+                    <img src="{% static 'img/logo.png' %}" alt="Logo" style="max-height: 50px;">
+                </div>
+                <nav>
+                    <a href="{% url 'dashboard:accueil' %}"><i class="bi bi-speedometer2"></i> Tableau de bord</a>
+                    <a href="{% url 'dashboard:liste_articles' %}"><i class="bi bi-newspaper"></i> Articles</a>
+                    <a href="{% url 'dashboard:liste_projets' %}"><i class="bi bi-briefcase"></i> Projets</a>
+                    <a href="{% url 'dashboard:liste_commentaires' %}"><i class="bi bi-chat-dots"></i> Commentaires</a>
+                    <a href="{% url 'dashboard:deconnexion' %}"><i class="bi bi-box-arrow-right"></i> Déconnexion</a>
+                </nav>
+            </div>
+            <!-- Main content -->
+            <div class="col-md-9 col-lg-10 ms-sm-auto px-0">
+                <nav class="navbar navbar-dash px-3">
+                    <span class="navbar-brand">Bonjour, {{ request.user.username }}</span>
+                </nav>
+                <div class="content">
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                                {{ message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                    {% block content %}{% endblock %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <script  src="{% static 'jquery-3.7.1.min.js' %} "></script>
+    <script src="{% static 'bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>

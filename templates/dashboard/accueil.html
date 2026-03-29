@@ -1,0 +1,39 @@
+{% extends 'dashboard/base_dashboard.html' %}
+{% block title %}Accueil{% endblock %}
+{% block content %}
+<h1>Tableau de bord</h1>
+<div class="row mt-4">
+    <div class="col-md-3">
+        <div class="card text-white bg-primary mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Articles</h5>
+                <p class="card-text display-6">{{ total_articles }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-white bg-success mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Projets</h5>
+                <p class="card-text display-6">{{ total_projets }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-white bg-warning mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Commentaires</h5>
+                <p class="card-text display-6">{{ total_commentaires }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-white bg-danger mb-3">
+            <div class="card-body">
+                <h5 class="card-title">En attente</h5>
+                <p class="card-text display-6">{{ commentaires_attente }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

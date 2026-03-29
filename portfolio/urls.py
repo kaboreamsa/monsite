@@ -6,4 +6,5 @@ app_name = 'portfolio'
 urlpatterns = [
     path('', views.projet_list, name='list'),
     path('<int:pk>/', views.projet_detail, name='detail'),
+    path('ajouter/', views.ajouter_projet, name='ajouter'),
 ]

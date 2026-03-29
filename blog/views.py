@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.contrib import messages
 from .models import Article
 from .forms import CommentaireForm
+import PIL
 
 def article_list(request):
     articles = Article.objects.all()

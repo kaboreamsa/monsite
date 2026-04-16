@@ -108,6 +108,14 @@
                     <li class="nav-item"><a class="nav-link" href="{% url 'blog:list' %}">Blog</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'portfolio:list' %}">Portfolio</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'contact:contact' %}">Contact</a></li>
+                    {% if user.is_authenticated and user.is_staff %}
+                        <li class="nav-item"><a class="nav-link" href="{% url 'dashboard:accueil' %}">Dashboard</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'dashboard:deconnexion' %}">Déconnexion</a></li>
+                    {% elif user.is_authenticated %}
+                        <li class="nav-item"><a class="nav-link" href="{% url 'dashboard:deconnexion' %}">Déconnexion</a></li>
+                    {% else %}
+                        <li class="nav-item"><a class="nav-link" href="{% url 'dashboard:connexion' %}">Connexion</a></li>
+                    {% endif %}
                 </ul>
             </div>
         </div>

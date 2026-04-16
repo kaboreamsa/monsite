@@ -1,0 +1,55 @@
+{% extends 'dashboard/base_dashboard.html' %}
+{% load static %}
+
+{% block title %}Liste des projets{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h1>Projets</h1>
+    <a href="{% url 'dashboard:ajouter_projet' %}" class="btn btn-success">
+        <i class="bi bi-plus-circle"></i> Nouveau projet
+    </a>
+</div>
+
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>Titre</th>
+            <th>Date de création</th>
+            <th>URL</th>
+            <th>Image</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for projet in projets %}
+        <tr>
+            <td>{{ projet.titre }}</td>
+            <td>{{ projet.date_creation|date:"d/m/Y" }}</td>
+            <td>
+                {% if projet.url %}
+                    <a href="{{ projet.url }}" target="_blank" class="btn btn-sm btn-outline-primary">Voir</a>
+                {% else %}
+                    —
+                {% endif %}
+            </td>
+            <td>
+                {% if projet.image %}
+                    <img src="{{ projet.image.url }}" alt="{{ projet.titre }}" style="height: 40px;">
+                {% else %}
+                    —
+                {% endif %}
+            </td>
+            <td>
+                <a href="{% url 'dashboard:modifier_projet' projet.pk %}" class="btn btn-sm btn-warning">Modifier</a>
+                <a href="{% url 'dashboard:supprimer_projet' projet.pk %}" class="btn btn-sm btn-danger">Supprimer</a>
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="5" class="text-center">Aucun projet pour le moment.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

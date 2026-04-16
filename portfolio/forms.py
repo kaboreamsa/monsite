@@ -8,4 +8,6 @@ class ProjetForm(forms.ModelForm):
         widgets = {
             'date_creation': forms.DateInput(attrs={'type': 'date', 'class': 'form-control'}),
             'description': forms.Textarea(attrs={'rows': 4, 'class': 'form-control'}),
+            'titre': forms.TextInput(attrs={'class': 'form-control'}),
+            'url': forms.URLInput(attrs={'class': 'form-control'}),
         }

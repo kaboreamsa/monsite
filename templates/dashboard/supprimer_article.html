@@ -1,0 +1,12 @@
+{% extends 'dashboard/base_dashboard.html' %}
+{% block title %}Supprimer {{ article.titre }}{% endblock %}
+{% block content %}
+<div class="alert alert-danger">
+    <p>Êtes-vous sûr de vouloir supprimer l'article <strong>{{ article.titre }}</strong> ?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Oui, supprimer</button>
+        <a href="{% url 'dashboard:liste_articles' %}" class="btn btn-secondary">Annuler</a>
+    </form>
+</div>
+{% endblock %}

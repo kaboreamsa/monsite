@@ -1,0 +1,16 @@
+{% extends 'dashboard/base_dashboard.html' %}
+{% load static %}
+
+{% block title %}Supprimer {{ projet.titre }}{% endblock %}
+
+{% block content %}
+<div class="alert alert-danger">
+    <p>Êtes-vous sûr de vouloir supprimer le projet <strong>{{ projet.titre }}</strong> ?</p>
+    <p class="text-muted">Cette action est irréversible.</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Oui, supprimer</button>
+        <a href="{% url 'dashboard:liste_projets' %}" class="btn btn-secondary">Annuler</a>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'dashboard/base_dashboard.html' %}
+{% load static %}
+
+{% block title %}Ajouter un projet{% endblock %}
+
+{% block content %}
+<h1>Ajouter un projet</h1>
+<form method="post" enctype="multipart/form-data" class="mt-3 card p-4">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div class="mt-3">
+        <button type="submit" class="btn btn-success">Ajouter</button>
+        <a href="{% url 'dashboard:liste_projets' %}" class="btn btn-secondary">Annuler</a>
+    </div>
+</form>
+{% endblock %}

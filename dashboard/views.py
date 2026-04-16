@@ -8,6 +8,8 @@ from blog.forms import ArticleForm
 from portfolio.forms import ProjetForm
 from blog.forms import CommentaireForm  # à créer si nécessaire
 
+
+
 def is_staff_user(user):
     return user.is_staff or user.is_superuser
 

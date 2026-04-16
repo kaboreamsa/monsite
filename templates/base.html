@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com">
+    <link rel="stylesheet" href="{% static 'css/all.min.css' %}">
 
     <style>
         /* Styles additionnels pour un rendu publicitaire percutant */
@@ -78,11 +78,13 @@
         .nav-link.active {
             color: #ff7e36 !important;
         }
-        .fa-whatsapp { color: #25D366; }
-        .fa-facebook-messenger { color: #0084FF; }
-        .fa-envelope { color: #D44638; }
-        .fa-linkedin { color: #0077B5; }
-        .fa-youtube { color: #FF0000; }
+        .social-icons a i { font-size: 1.8rem; }
+        .social-icons a .fa-whatsapp { color: #25D366; }
+        .social-icons a .fa-facebook-messenger { color: #0084FF; }
+        .social-icons a .fa-envelope { color: #D44638; }
+        .social-icons a .fa-linkedin { color: #0077B5; }
+        .social-icons a .fa-youtube { color: #FF0000; }
+        .social-icons a .fa-phone { color: #34B7F1; }
         i {
             font-family: "Font Awesome 6 Brands", "Font Awesome 6 Free", sans-serif !important;
             font-style: normal;
@@ -174,32 +176,32 @@
                     <div class="social-icons mb-3">
                         <!-- WhatsApp -->
                         <a href="https://wa.me/22677090365" target="_blank" title="WhatsApp">
-                            <i class=" fa-brands fa-whatsapp"></i>
+                            <i class=" fab fa-whatsapp"></i>
                         </a>
 
                         <!-- Facebook Messenger -->
                         <a href="https://www.facebook.com/share/1Srop7mRQi/" target="_blank" title="Facebook Messenger">
-                            <i class="fa-facebook-messenger"></i>
+                            <i class="fab fa-facebook-messenger"></i>
                         </a>
 
                         <!-- Gmail (Email) -->
                         <a href="mailto:kaboreamsa@gmail.com" title="Gmail">
-                            <i class="fa-solid fa-envelope"></i>
+                            <i class="fas fa-envelope"></i>
                         </a>
 
                         <!-- Téléphone -->
                         <a href="tel:+22677090365" title="Téléphone">
-                            <i class="fa-solid fa-phone"></i>
+                            <i class="fas fa-phone"></i>
                         </a>
 
                         <!-- LinkedIn (Ajouté) -->
                         <a href="https://www.linkedin.com/in/amsa-kabore-085ba11a6?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" title="LinkedIn">
-                            <i class="fa-brands fa-linkedin"></i>
+                            <i class="fab fa-linkedin"></i>
                         </a>
 
                         <!-- YouTube (Ajouté) -->
                         <a href="https://www.youtube.com/@user-z3k2n?si=tSkAJcA01x9dhvb4" target="_blank" title="YouTube">
-                            <i class="fa-brands fa-youtube"></i>
+                            <i class="fab fa-youtube"></i>
                         </a>
 
                     </div>
